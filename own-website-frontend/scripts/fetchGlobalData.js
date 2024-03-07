@@ -47,10 +47,15 @@ async function fetchGlobalData() {
             }
         }
     } catch (error) {
-        console.error('Error fetching global data:', error);
-
-        process.exit(1); 
+        console.error('Error in fetchGlobalData:', error.message || error);
+        throw error;
     }
 }
+
+process.on('unhandledRejection', (reason, promise) => {
+    console.error('Unhandled Rejection at:', reason, 'Promise:', promise);
+    // You may want to handle the unhandled rejection here or take appropriate actions.
+    // For example, logging the error or terminating the application.
+});
 
 fetchGlobalData();

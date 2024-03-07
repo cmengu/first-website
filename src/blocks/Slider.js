@@ -7,12 +7,12 @@ export const Slider = {
     fields: [
       {
           name: 'header',
-          Label: 'Header',
+          label: 'Header',
           type: 'richText',
       },
       {
           name: 'body',
-          Label: 'Body',
+          label: 'Body',
           type: 'richText',
       },
       {

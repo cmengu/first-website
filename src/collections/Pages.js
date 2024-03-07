@@ -5,7 +5,6 @@ import { SimpleRichText } from "../blocks/SimpleRichText";
 import { Slider } from "../blocks/Slider";
 import { TwoColumn } from "../blocks/TwoColumn";
 
-
 export const Pages = {
     slug: 'pages',
     labels:  {
@@ -60,3 +59,4 @@ export const Pages = {
         },
     ]
 }
+console.log('Pages Collection Configuration:', Pages);

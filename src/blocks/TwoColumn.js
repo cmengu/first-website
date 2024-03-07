@@ -27,14 +27,14 @@ export const TwoColumn = {
             type: 'select',
             options: [
                 {
-                    label: 'Default',
+                    text: 'Default',  // Using 'text' instead of 'label' for consistency
                     value: 'default',
                 },
                 {
-                    label: 'Reverse',
+                    text: 'Reverse',  // Using 'text' instead of 'label' for consistency
                     value: 'reverse',
                 },
-            ]
+            ],
         }, 
     ]
 }

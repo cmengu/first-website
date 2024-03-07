@@ -1,5 +1,5 @@
-import Footer from "@/blocks/global/Footer";
-import Header from "@/blocks/global/Header";
+import  Footer  from "@/blocks/global/Footer";
+import  Header  from "@/blocks/global/Header";
 import "@/styles/globals.css";
 // import { CloseModalOnRouteChange } from '../components/CloseModalOnRouteChange';
 
@@ -10,6 +10,15 @@ axios.defaults.baseURL = process.env.NEXT_PUBLIC_BACKEND_URL;
 axios.defaults.headers.post["Content-Type"] = "application/json";
 axios.defaults.headers.patch["Content-Type"] = "application/json";
 axios.defaults.withCredentials =true;
+
+axios.interceptors.response.use(
+  (response) => response,
+  (error) => {
+    console.error("Axios error:", error);
+    return Promise.reject(error);
+  }
+);
+
 //it is not ideal to use getInitialProps in here for globals as it will blow up the size of every single page as the data is going into every page that gets rendered
 export default function App({ Component, pageProps, }) {
   return (
