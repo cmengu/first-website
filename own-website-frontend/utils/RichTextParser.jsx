@@ -1,0 +1,13 @@
+import React from 'react';
+import serializeLexicalRichText from './serializeLexicalRichText.jsx';
+
+
+export default function ({ className, content, customClassNames }) {
+    if (!content?.root?.children) return ''
+
+    return (
+        <div className={`${[className].filter(Boolean).join(' ')} richText`}>
+            {serializeLexicalRichText({ children: content.root.children, customClassNames })}
+        </div>
+    );
+};
